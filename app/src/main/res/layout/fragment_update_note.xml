@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    tools:context=".view.UpdateNoteFrag">
+
+
+    <EditText
+        android:id="@+id/ed_title"
+        style="@style/TextAppearance.AppCompat.Title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/notebackground"
+        android:padding="10dp"
+        android:text="Hello world"
+        android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/ed_note"
+        style="@style/TextAppearance.AppCompat.Subhead"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:gravity="start"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/notebackground"
+        android:padding="10dp"
+        android:text="Hello world"
+        android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ed_title" />
+
+    <EditText
+        android:id="@+id/ed_cat"
+        style="@style/TextAppearance.AppCompat.Subhead"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/notebackground"
+        android:layout_marginTop="16dp"
+        android:padding="10dp"
+        android:text="Hello world"
+        android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ed_note" />
+
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ed_cat">
+
+        <RadioButton
+
+            android:id="@+id/rd1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/seg_left"
+            android:button="@android:color/transparent"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="Low"
+            android:textColor="?attr/colorAccent"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/rd2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/seg_center"
+            android:button="@android:color/transparent"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="Medium"
+            android:textColor="?attr/colorAccent"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/rd3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/seg_right"
+            android:button="@android:color/transparent"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="High"
+            android:textColor="?attr/colorAccent"
+            android:textStyle="bold" />
+    </RadioGroup>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnupdate_save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="40dp"
+        android:backgroundTint="@color/button"
+        android:text="Save Changes"
+
+        android:background="@drawable/notebackground"
+        android:textAllCaps="false"
+        android:textColor="?attr/colorAccent"
+        app:cornerRadius="9dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup"
+        app:layout_constraintVertical_bias="1.0" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
