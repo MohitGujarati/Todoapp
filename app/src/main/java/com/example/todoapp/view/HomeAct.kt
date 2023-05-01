@@ -5,6 +5,7 @@ import android.app.Dialog
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.os.Handler
 import android.view.Gravity
 import android.view.View
 import android.widget.EditText
@@ -133,18 +134,21 @@ class HomeAct : AppCompatActivity() {
                     category: String,
                     priority: Int
                 ) {
-                    var dbhelper_delete = NotesDb(this@HomeAct)
+                    Handler().postDelayed({
+                        // Your code to be executed after delay
+                        var dbhelper_delete = NotesDb(this@HomeAct)
 
-                    dbhelper_delete.note_delete(
-                        NoteModel(
+                        dbhelper_delete.note_delete(
+                            NoteModel(
 
-                            userid, "", "", "", 0
+                                userid, "", "", "", 0
+                            )
                         )
-                    )
-                    //removing item at an specific place
-                    userlist.removeAt(position)
-                    //telling recycler view that data has changed
-                    binding.recview.adapter?.notifyDataSetChanged()
+                        //removing item at an specific place
+                        userlist.removeAt(position)
+                        //telling recycler view that data has changed
+                        binding.recview.adapter?.notifyDataSetChanged()
+                    }, 3000)
 
                     Toast(this@HomeAct).ShowCustomToast("Congratulation", this@HomeAct)
                 }

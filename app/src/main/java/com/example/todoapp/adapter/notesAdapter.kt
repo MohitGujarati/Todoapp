@@ -3,6 +3,7 @@ package com.example.todoapp.adapter
 import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Color
+import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -87,7 +88,13 @@ class notesAdapter(
                     mymodel.Category,
                     mymodel.Priority
                 )
+                Handler().postDelayed({
+                    holder.checkbox.isChecked=false
+                }, 3000)
+
             }
+
+
 
         }
 
