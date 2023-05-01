@@ -22,7 +22,6 @@ class NotesDb(var context: Context) : SQLiteOpenHelper(context, TABLE_NAME, null
         var id_priority = "Priority"
     }
 
-
     override fun onCreate(db: SQLiteDatabase?) {
         val CREATE_TABLE =
             (
@@ -66,15 +65,14 @@ class NotesDb(var context: Context) : SQLiteOpenHelper(context, TABLE_NAME, null
         var userdatalist: MutableList<NoteModel> = ArrayList<NoteModel>()
 
         var query: String = ""
+        var selectall = "select * from $TABLE_NAME"
 
 
         when (num) {
-            0 -> query = "select * from $TABLE_NAME order by $userid desc"
-            1 -> query = "select * from $TABLE_NAME where $id_priority = $num order by $userid desc"
-            2 -> query = "select * from $TABLE_NAME where $id_priority = $num order by $userid desc"
-            3 -> query = "select * from $TABLE_NAME where $id_priority = $num order by $userid desc"
-            4 -> query = "select * from $TABLE_NAME order by $id_priority desc"
-            5 -> query = "select * from $TABLE_NAME order by $id_priority asc"
+            0 -> query = "$selectall order by $userid desc"
+            1, 2, 3 -> query = "$selectall where $id_priority = $num order by $userid desc"
+            4 -> query = "$selectall order by $id_priority desc"
+            5 -> query = "$selectall order by $id_priority asc"
         }
 
 
@@ -90,7 +88,7 @@ class NotesDb(var context: Context) : SQLiteOpenHelper(context, TABLE_NAME, null
         }
 
 
-        var iduser:Int
+        var iduser: Int
         var titleid: String
         var noteid: String
         var categoryid: String
@@ -110,7 +108,7 @@ class NotesDb(var context: Context) : SQLiteOpenHelper(context, TABLE_NAME, null
 
 
                     var userdatas =
-                        NoteModel(iduser,titleid, noteid, categoryid, priorityid)
+                        NoteModel(iduser, titleid, noteid, categoryid, priorityid)
                     userdatalist.add(userdatas)
 
 

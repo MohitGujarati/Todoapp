@@ -40,7 +40,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
-            android:backgroundTint="@color/Purple"
+            android:backgroundTint="@color/button"
             android:text="Save"
             android:textColor="@color/white"
             android:textSize="16dp"
